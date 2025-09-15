@@ -1,3 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigPay MVP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-link" data-target="wallets">Wallet</div>
+    <div class="nav-link" data-target="send">Send</div>
+    <div class="nav-link" data-target="card">Card</div>
+    <div class="nav-link" data-target="profile">Profile</div>
+  </nav>
+
+  <!-- Login Screen -->
+  <section id="login" class="screen">
+    <h1>Login</h1>
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button onclick="showScreen('wallets')">Login</button>
+    <p>Don't have an account? <span onclick="showScreen('signup')">Sign Up</span></p>
+  </section>
+
+  <!-- Signup Screen -->
+  <section id="signup" class="screen">
+    <h1>Sign Up</h1>
+    <input type="text" placeholder="First Name" />
+    <input type="text" placeholder="Last Name" />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button onclick="showScreen('wallets')">Create Account</button>
+  </section>
+
+  <!-- Wallets Screen -->
+  <section id="wallets" class="screen">
+    <h1>Wallets</h1>
+    <div class="card">XAF: 63,400.00</div>
+    <div class="card">GHC: 880.20</div>
+    <div class="card">NGN: 32,820.16</div>
+    <div class="card">USD: 11,048.20</div>
+    <div class="card">EUR: 550.40</div>
+    <h2>Transactions</h2>
+    <ul>
+      <li>+XAF 62,720.00 from Eko St Limited</li>
+      <li>-GHC 2,000.16 to Ude Charles</li>
+      <li>-USD 82.00 to Mac Gee Limited</li>
+      <li>+USD 221.17 from Ajeu Tunes</li>
+    </ul>
+  </section>
+
+  <!-- Send Money Screen -->
+  <section id="send" class="screen">
+    <h1>Send Money</h1>
+    <input type="text" placeholder="Recipient (Phone/Email)" />
+    <input type="number" placeholder="Amount" />
+    <button onclick="showScreen('success')">Send</button>
+  </section>
+
+  <!-- Virtual Card Screen -->
+  <section id="card" class="screen">
+    <h1>Virtual Card</h1>
+    <div class="card">DigPay VISA •••• 1234</div>
+    <button>Freeze</button>
+    <button>Change PIN</button>
+  </section>
+
+  <!-- Profile Screen -->
+  <section id="profile" class="screen">
+    <h1>User Profile</h1>
+    <p>Email: user@digpay.com</p>
+    <button onclick="showScreen('login')">Logout</button>
+  </section>
+
+  <!-- Success Screen -->
+  <section id="success" class="screen">
+    <h1>✅ Success!</h1>
+    <p>Your transaction was completed.</p>
+    <button onclick="showScreen('wallets')">Return Home</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
 <link rel="manifest" href="/manifest.json">
 <script>
   if ('serviceWorker' in navigator) {
